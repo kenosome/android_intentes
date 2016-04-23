@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 /**
  * Created by jileon on 23/04/2016.
@@ -31,8 +32,14 @@ public class OtraActividad extends Activity {
 //        String nombre = getIntent().getExtras().getString("nombre","NO_NAME");
 //        String cedula = getIntent().getExtras().getString("cedula","NO_CEDULA");
 
-        if (p != null)
-            salida.setText("Su nombre es " + p.getNombre() + " y su cedula es " + p.getCedula());
+        if (p != null){
+            Calendar calendar = Calendar.getInstance();
+            int hora = calendar.get(calendar.HOUR_OF_DAY);
+            int minutos = calendar.get(calendar.MINUTE);
+            String str_horas = hora + ":" + minutos;
+            salida.setText(str_horas + " -> Su nombre es " + p.getNombre() + " y su cedula es " + p.getCedula());
+        }
+
     }
 
     public void aceptarColor(View view) {
