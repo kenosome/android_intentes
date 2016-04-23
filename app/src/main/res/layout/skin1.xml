@@ -9,4 +9,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/salida"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escriba un color"
+        android:id="@+id/color"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:onClick="aceptarColor"/>
+
+
 </LinearLayout>
