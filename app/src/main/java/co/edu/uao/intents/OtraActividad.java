@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 /**
  * Created by jileon on 23/04/2016.
  */
@@ -17,9 +19,12 @@ public class OtraActividad extends Activity {
 
         salida = (TextView) findViewById(R.id.salida);
 
-        String nombre = getIntent().getExtras().getString("nombre","NO_NAME");
-        String cedula = getIntent().getExtras().getString("cedula","NO_CEDULA");
+        //se combierte el objeto serializado a un objeto tipo persona
+        Persona p = (Persona) getIntent().getExtras().getSerializable("persona");
 
-        salida.setText("Su nombre es " + nombre + " y su cedula es " + cedula);
+//        String nombre = getIntent().getExtras().getString("nombre","NO_NAME");
+//        String cedula = getIntent().getExtras().getString("cedula","NO_CEDULA");
+
+        salida.setText("Su nombre es " + p.getNombre() + " y su cedula es " + p.getCedula());
     }
 }

@@ -25,8 +25,11 @@ public class MainActivity extends Activity {
     //este se puede crear con el bombillo desde el XML
     public void enviarParametros(View view) {
         Intent i = new Intent(this, OtraActividad.class);
-        i.putExtra("nombre", nombre.getText().toString());
-        i.putExtra("cedula", cedula.getText().toString());
+
+        Persona p = new Persona(nombre.getText().toString(),cedula.getText().toString());
+        i.putExtra("persona",p);
+        //i.putExtra("nombre", nombre.getText().toString());
+        //i.putExtra("cedula", cedula.getText().toString());
 
         startActivity(i);
 
