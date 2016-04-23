@@ -16,5 +16,10 @@ public class OtraActividad extends Activity {
         setContentView(R.layout.skin1);
 
         salida = (TextView) findViewById(R.id.salida);
+
+        String nombre = getIntent().getExtras().getString("nombre","NO_NAME");
+        String cedula = getIntent().getExtras().getString("cedula","NO_CEDULA");
+
+        salida.setText("Su nombre es " + nombre + " y su cedula es " + cedula);
     }
 }
